@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+Estructura de una funcion: 
+Una función debe tener 
+  -nombre
+  -argumentos
+  -cuerpo
+  -resultado
+
+Ejemplo: 
+A continuación una función que recibe dos numeros, los suma y devuelve el resultado:
+```{r}
+suma <- function(a,b){
+  a+b
+}
+suma(5,9)
+```
+Familia de funciones apply:
+Son funciones utilizadas para aplicarse en cada elemento de una estructura de datos.
+
+lapply()
+Es una funcion que sirve para aplicar funciones a todos los elementos de una lista, de ahí la l de su nombre.
+
+ejemplo utilizando trees y aplicando la función mean:
+```{r}
+trees
+
+lapply(X = trees, FUN = mean)
+```
+
+sapply()
+La funcion sapply recorre una lista o vector y le aplica una funcion
+
+por ejemplo, obteniendo la raiz cuadrada con sqrt:
+```{r}
+
+sapply(1:9, sqrt)
+```
+vapply()
+La funcion vapply devuelve un vector con la aplicación de la funcion de cada lista introducida como parametro:
+
+por ejemplo:
+```{r}
+
+x <- list(A=1, B=1:6, C= 1:10)
+
+vapply(x, FUN=length, FUN.VALUE = 0L)
+```
+
